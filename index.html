@@ -3,18 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Crystal Collector | jQuery Game</title>
-
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <!-- Added link to reset.css -->
-    <link rel="stylesheet" href="assets/style/reset.css">
-
+    <link rel="stylesheet" type="text/css" href="assets/style/reset.css">
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
     <!-- Added a link to style.css -->
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/style/style.css">
 
 </head>
 <body>
@@ -25,12 +21,57 @@
     <h3 class="text-center">You will be given a random number at the start of the game.<br>
         There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.<br>
         You win the game by matching your total score to a random number, you lose the game if your total score goes above the random number.<br>
-        The value of each crystal is hidden from you undtil you click on it.<br>
-        Each time when the game starts, the game will change the values of each crystal.
+        The value of each crystal is hidden from you undtil you click on it.<br>                Each time when the game starts, the game will change the values of each crystal.
     </h3>
 </div>
 
+<!-- Row for Gem icons -->
 <div class="container">
+
+    <div class="row">
+
+        <div class="col-xs-0 col-md-2"></div>
+        <div class="col-xs-6 col-md-2" class="gem" style="background: red;">
+            <img src="..." alt="red" class="tumbnail" class="imgGem">
+        </div>
+        <div class="col-xs-6 col-md-2" class="gem" style="background: blue;">
+            <img src="..." alt="red" class="tumbnail" class="imgGem">
+        </div>
+        <div class="col-xs-6 col-md-2" class="gem" style="background: green;">
+            <img src="..." alt="red" class="tumbnail" class="imgGem">
+        </div>
+        <div class="col-xs-6 col-md-2" class="gem" style="background: yellow;">
+            <img src="..." alt="red" class="tumbnail" class="imgGem">
+        </div>
+        <div class="col-xs-0 col-md-2"></div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="panel panel-default col-md-3">
+            <div class="panel-heading">
+                <h3 class="panel-title">Added Score:</h3>
+            </div>  
+            <div class="panel-body">
+                0
+            </div> 
+        </div>
+        
+        <div class="col-md-2">
+            WINS: <span>0</span><br>LOSSES: <span>0</span>
+        </div>
+        
+        <div class="panel panel-default col-md-3">    
+            <div class="panel-heading">
+                <h3 class="panel-title">Your total score is:</h3>
+            </div>
+            <div class="panel-body">
+                0
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 
 </div>
 
