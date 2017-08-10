@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Crystal Collector | jQuery Game</title>
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -17,44 +19,48 @@
 </head>
 <body>
 
-<!-- Jumbotron for Title -->
-<div class="jumbotron">
-    <h1 class="text-center">Crystals Collector</h1>
-    <h3 class="text-center">You will be given a random hidden number at the start of the game.<br>
-        There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.<br>
-        You win the game by matching your total score to a random number, you lose the game if your total score goes above the random number.<br>
-        The value of each crystal is hidden from you until you click on it.<br>
-        Each time when the game starts, the game will change the values of each crystal.
-    </h3>
-</div>
-
-
 <div class="container">
+
+    <!-- Jumbotron for Title -->
+    <div class="jumbotron">
+        <h1 class="text-center">Crystals Collector</h1>
+        <h3>You will be given a random hidden number at the start of the game.<br>
+            There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.<br>
+            You win the game by matching your total score to a random number, you lose the game if your total score goes above the random number.<br>
+            The value of each crystal is hidden from you until you click on it.<br>
+            Each time when the game starts, the game will change the values of each crystal.
+        </h3>
+    </div>
 
     <!-- Row for Gem icons -->
     <div class="row">
 
         <div class="col-xs-0 col-md-2"></div>
-        <div class="col-xs-6 col-md-2 text-center" class="gem">
+
+        <div class="col-xs-3 col-md-2 text-center" class="gem">
             <button type="button" class="btn btn-default btn-lg" id="butOne">
                 <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>
             </button>
         </div>
-        <div class="col-xs-6 col-md-2 text-center" class="gem">
+
+        <div class="col-xs-3 col-md-2 text-center" class="gem">
             <button type="button" class="btn btn-default btn-lg" id="butTwo">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
         </div>
-        <div class="col-xs-6 col-md-2 text-center" class="gem">
+
+        <div class="col-xs-3 col-md-2 text-center" class="gem">
             <button type="button" class="btn btn-default btn-lg" id="butThree">
                 <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
             </button>
         </div>
-        <div class="col-xs-6 col-md-2 text-center" class="gem">
+
+        <div class="col-xs-3 col-md-2 text-center" class="gem">
             <button type="button" class="btn btn-default btn-lg" id="butFour">
                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
             </button>
         </div>
+
         <div class="col-xs-0 col-md-2"></div>
 
     </div>
@@ -62,6 +68,7 @@
     <!-- Row for scores and wins/losses -->
     <div class="row" id="gameInfo">
         <div class="col-md-2"></div>
+
         <div class="panel panel-default col-md-3">
             <div class="panel-heading">
                 <h3 class="panel-title">Added Score:</h3>
@@ -84,6 +91,7 @@
                 0
             </div>
         </div>
+        
         <div class="col-md-2"></div>
     </div>
 

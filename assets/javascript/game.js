@@ -3,30 +3,30 @@
 	var gemOne = {
 		valOne: 0,
 		getRandomInt: function () {
-	   		valOne = Math.floor(Math.random() * 10) +7;
+	   		this.valOne = Math.floor(Math.random() * 10) +7;
 		}
-	};
+	}
 
 	var gemTwo = {
 		valTwo: 0,
 		getRandomInt: function () {
-	   		valTwo = Math.floor(Math.random() * 10) +5;
+	   		this.valTwo = Math.floor(Math.random() * 10) +5;
 		}
-	};
+	}
 
 	var gemThree = {
 		valThree: 0,
 		getRandomInt: function () {
-	   		valThree = Math.floor(Math.random() * 10) +3;
+	   		this.valThree = Math.floor(Math.random() * 10) +3;
 		}
-	};
+	}
 
 	var gemFour = {
 		valFour: 0,
 		getRandomInt: function () {
-	   		valFour = Math.floor(Math.random() * 10) +1;
+	   		this.valFour = Math.floor(Math.random() * 10) +1;
 		}
-	};
+	}
 
 	var target = 0;
 	var userScore = 0;
@@ -36,73 +36,93 @@
 // A function that creates a random target number
 
 	$(document).ready(function() {
-		var target = Math.floor(Math.random()*100) + 20;
+		target = Math.floor(Math.random()*100) + 20;
 		gemOne.getRandomInt();
 		gemTwo.getRandomInt();
 		gemThree.getRandomInt();
 		gemFour.getRandomInt();
 
 		console.log("Target Score: " + target);
-		console.log("Gem One :" + valOne);
-		console.log("Gem Two :" + valTwo);
-		console.log("Gem Three :" + valThree);
-		console.log("Gem Four :" + valFour);
-	});
+		console.log("Gem One :" + gemOne.valOne);
+		console.log("Gem Two :" + gemTwo.valTwo);
+		console.log("Gem Three :" + gemThree.valThree);
+		console.log("Gem Four :" + gemFour.valFour);
 
+	// The on("click") functions that trigger on button presses, adding the values to user's total
 
-// The on("click") functions that trigger on button presses, adding the values to user's total
+		$("#butOne").on("click", function() {
+			userScore = userScore + gemOne.valOne;
+			$("#scoreCounter").html(gemOne.valOne);
+			$("#totalScore").html(userScore);
+			checkValues();
+		});
 
-	$("#butOne").on("click", function() {
-		userScore = userScore + valOne;
-		$("#scoreCounter").html(valOne);
-		$("#totalScore").html(userScore);
-	});
+		$("#butTwo").on("click", function() {
+			userScore = userScore + gemTwo.valTwo;
+			$("#scoreCounter").html(gemTwo.valTwo);
+			$("#totalScore").html(userScore);
+			checkValues();
+		});
 
-	$("#butTwo").on("click", function() {
-		userScore = userScore + valTwo;
-		$("#scoreCounter").html(valTwo);
-		$("#totalScore").html(userScore);
-	});
+		$("#butThree").on("click", function() {
+			userScore = userScore + gemThree.valThree;
+			$("#scoreCounter").html(gemThree.valThree);
+			$("#totalScore").html(userScore);
+			checkValues();
+		});
 
-	$("#butThree").on("click", function() {
-		userScore = userScore + valThree;
-		$("#scoreCounter").html(valThree);
-		$("#totalScore").html(userScore);
-	});
-
-	$("#butFour").on("click", function() {
-		userScore = userScore + valFour;
-		$("#scoreCounter").html(valFour);
-		$("#totalScore").html(userScore);
+		$("#butFour").on("click", function() {
+			userScore = userScore + gemFour.valFour;
+			$("#scoreCounter").html(gemFour.valFour);
+			$("#totalScore").html(userScore);
+			checkValues();
+		});
 	});
 
 // If/If Else statements that check to see if 
 
-	if (userScore === target) {
+	function checkValues() {
+		if (userScore === target) {
 
-		wins++;
-		$("#playerWin").html(wins);
-		alert("You collected the right number! Play again!");
+			wins++;
+			$("#playerWin").html(wins);
+			alert("You collected the right number! Play again!");
 
-		$("#scoreCounter, #totalScore").empty();
+			$("#scoreCounter, #totalScore").html("0");
+			userScore = 0;
 
-		var target = Math.floor(Math.random()*100) + 20;
-		gemOne.getRandomInt();
-		gemTwo.getRandomInt();
-		gemThree.getRandomInt();
-		gemFour.getRandomInt();
+			target = Math.floor(Math.random()*100) + 20;
+			gemOne.getRandomInt();
+			gemTwo.getRandomInt();
+			gemThree.getRandomInt();
+			gemFour.getRandomInt();
 
-	} else {
+			console.log("Target Score: " + target);
+			console.log("Gem One :" + gemOne.valOne);
+			console.log("Gem Two :" + gemTwo.valTwo);
+			console.log("Gem Three :" + gemThree.valThree);
+			console.log("Gem Four :" + gemFour.valFour);
 
-		losses++;
-		$("#playerLoss").html(losses);
-		alert("You went over  :(  Play again!");
+		} else if (userScore > target) {
 
-		$("#scoreCounter, #totalScore").empty();
+			losses++;
+			$("#playerLoss").html(losses);
+			alert("You went over  :(  Play again!");
 
-		var target = Math.floor(Math.random()*100) + 20;
-		gemOne.getRandomInt();
-		gemTwo.getRandomInt();
-		gemThree.getRandomInt();
-		gemFour.getRandomInt();
+			$("#scoreCounter, #totalScore").html("0");
+			userScore = 0;
+
+			target = Math.floor(Math.random()*100) + 20;
+			gemOne.getRandomInt();
+			gemTwo.getRandomInt();
+			gemThree.getRandomInt();
+			gemFour.getRandomInt();
+
+			console.log("Target Score: " + target);
+			console.log("Gem One :" + gemOne.valOne); 
+			console.log("Gem Two :" + gemTwo.valTwo);
+			console.log("Gem Three :" + gemThree.valThree);
+			console.log("Gem Four :" + gemFour.valFour);
+
+		}
 	}
